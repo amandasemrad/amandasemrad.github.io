@@ -1,0 +1,326 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    margin: 0 auto;
+    background: #fffff0;
+    color: #222;
+    font-family: 'Lora', serif;
+    text-align: center;
+    padding: 0;
+}
+
+/* Wrap content */
+.wrapper {
+  width: 55vw;
+  margin: 0 auto;
+  text-align: left;
+  padding-top: 3em;
+  padding-bottom: 6em;
+}
+
+/* Indent Paragraphs */
+p {
+  text-indent: 50px;
+}
+
+header {
+  color: #fffff0;
+  margin-top: 0;
+  text-decoration: none;
+  font-size: 90%;
+}
+
+header a:link {
+  text-decoration: none;
+  color: #fffff0;
+}
+
+header a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+header a:hover {
+  text-decoration: none;
+  color: #d2d5ca;
+}
+
+.home {
+  background-color: #eee;
+  background-image: url(../img/val1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+
+  min-height: 200px;
+  height: 90vh;
+  padding-top: 2em;
+}
+
+.home h1 {
+  display: block;
+  font-size: 6em;
+  font-family: 'Poiret One', cursive;
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 1.5em;
+  transform-origin: 0 0;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 4em;
+  margin-top: 30vh;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media only screen and (max-width: 800px) {
+    .home h1 {
+        font-size: 3em;
+        top: 30%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .home h1 {
+        font-size: 2em;
+        top: .1%;
+    }
+}
+
+
+/*  */
+/* Position of Hamburger Toggle */
+.hamburger {
+  position: fixed;
+  width: 50px;
+  height: 45px;
+  top: 20px;
+  right: 40px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.hamburger div {
+  position: relative;
+  width: 45px;
+  height: 5px;
+  border-radius: 3px;
+  background-color: #353535;
+  margin-top: 7px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hide toggle from view */
+#toggle {
+    display: none;
+}
+
+/* Animate Hamburger Mune */
+#toggle:checked + .hamburger .top {
+    transform: rotate(-45deg);
+    margin-top: 22.5px;
+}
+
+#toggle:checked + .hamburger .meat {
+    transform: rotate(45deg);
+    margin-top: -5px;
+}
+
+#toggle:checked + .hamburger .bottom {
+    transform: scale(0);
+}
+
+#toggle:checked + .hamburger + .nav {
+    top: 0;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #71BABA;
+    top: -100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 5;
+}
+
+.nav .nav-wrapper {
+    position: relative;
+    overflow-y: auto;
+    height: 100%;
+}
+
+nav {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+nav a {
+    margin-top: 1.25em;
+    color: #fffff0;
+    opacity: 0;
+    text-decoration: none;
+    font-size: 2.3em;
+    letter-spacing: 3px;
+    transition: all 0.1s ease;
+}
+
+nav a:first-child {
+    margin-top: 0;
+}
+
+#toggle:checked + .hamburger + .nav .nav-wrapper nav a {
+    opacity: 0.9;
+    transform: scale(1);
+}
+
+#toggle:checked + .hamburger + .nav .nav-wrapper nav a:hover {
+    opacity: 1;
+    color: #d2d5ca;
+    transform: scale(1.2);
+}
+
+/* Footer Styles */
+footer {
+  color: #d3d3d3;
+  background-color: #353535;
+  padding: 1rem 0;
+  box-shadow: inset 0px 10px 20px -9px rgba(0, 0, 0, 0.75);
+}
+
+footer p {
+  font-size: .7em;
+}
+
+/* instagram logo Link */
+.social {
+  height: 35px;
+  width: auto;
+}
+.instagram {
+  position: relative;
+  display: inline-block;
+}
+.instagram .clickable {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.instagram:hover .clickable {
+  display: inline;
+  cursor: pointer;
+}
+
+/* Portfolio portrait styles */
+.portrait {
+  max-width: 150px;
+  padding-bottom: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+#amanda {
+  height: 150px;
+  width: auto;
+  border-radius: 50%;
+
+}
+
+/* AS Kaptured Header Logo */
+.logo h1 {
+  margin-top: .7em;
+  font-size: 6em;
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+}
+.logo h1 a {
+  color: #d2d5ca;
+}
+/* Change size of h1 on smaller screens */
+@media only screen and (max-width: 600px) {
+  .logo h1 {
+    font-size: 3em;
+  }
+}
+
+/* Image Portfolio */
+/* https://codepen.io/dudleystorey/pen/Kgofa?editors=0100 */
+.gallery {
+  padding: .5vw;
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  display: -webkit-box;
+  display: flex;
+}
+.gallery div {
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  width: 200px;
+  margin: .5vw;
+}
+.gallery div img {
+  width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 400px) {
+  .gallery div { margin: 0; }
+  .gallery { padding: 0; }
+
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  text-align: center;
+}
+
+table, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+/* input styles */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+
+  border: none;
+  height: 40px;
+  padding: 0 10px;
+  width: 100%;
+  background-color: #d2d5ca;
+  color: #222;
+}
+
+/* text area styles */
+textarea {
+  height: 140px;
+  padding: 10px 10px;
+
+}
